@@ -12,6 +12,7 @@ export interface SaveGameValue {
   persistentProfileData: ProfileData;
   upgradesGiverData: { [key: string]: UpgradeData };
   waypoints: { [key: string]: any[] };
+  watchPointsData: WatchPointsData;
 }
 
 export interface ProfileData {
@@ -64,4 +65,10 @@ export interface ZoneState {
   isVisitWithCertainTruck: boolean;
   isVisited: boolean;
   truckUid: string;
+}
+
+export type WatchPointMap = { [key: string]: boolean }
+
+export interface WatchPointsData {
+  data: { [key: string]: WatchPointMap };
 }

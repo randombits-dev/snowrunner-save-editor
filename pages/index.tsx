@@ -7,6 +7,7 @@ import ProfileFields from "@/components/ProfileFields";
 import MissionList from "@/components/MissionList";
 import Instructions from "@/components/Instructions";
 import Upgrades from "@/components/Upgrades";
+import WatchPoints from "@/components/WatchPoints";
 
 
 const IndexPage = () => {
@@ -19,6 +20,7 @@ const IndexPage = () => {
         <ProfileFields profileData={profileData}/>
         <MissionList data={data}/>
         <Upgrades data={data.CompleteSave.SslValue}/>
+        <WatchPoints data={data.CompleteSave.SslValue.watchPointsData}/>
       </div>;
     }
   };

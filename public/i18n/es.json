@@ -1,6 +1,0 @@
-{
-  "helloWorld": "Hola Mundo",
-  "reset": "Reiniciar",
-  "alert": "Alerta",
-  "countDisplay": "El conteo es {count}"
-}
