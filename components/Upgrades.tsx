@@ -2,14 +2,22 @@ import React, {useState} from 'react';
 import {SaveGameValue} from "../definitions/ISaveGame";
 import I18n from "@/components/I18n";
 import styled from "styled-components";
-import Accordion from "@/components/Accordion";
-import {useI18n} from "@/providers/I18nProvider";
+import {IRegion} from "../definitions/levels";
 
 interface Params {
+  region: IRegion;
   data: SaveGameValue;
 }
 
+const SectionTitle = styled.div`
+  font-size: 20px;
+  margin: 0 0 5px 5px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #ddd;
+`;
+
 const UpgradeRow = styled.div`
+  margin-left: 10px;
   display: flex;
   align-items: center;
 `;
@@ -26,43 +34,27 @@ const Status = styled.div`
 
 const ButtonContainer = styled.div`
   width: 100px;
+  padding: 0 2px;
 `;
 
-const RegionName = styled.div`
-  display: flex;
-  font-weight: bold;
-  padding: 5px;
-`;
+const Button = styled.button`
+  background-color: ${props => props.theme.action};
+  border: 1px solid ${props => props.theme.border};
+  color: inherit;
+  padding: 5px 10px;
+  cursor: pointer;
+  width: 100%;
+`
 
-const Upgrades = ({data}: Params) => {
-  const {translate} = useI18n();
+const Upgrades = ({region, data}: Params) => {
   const [upgradeData, setUpgradeData] = useState(data.upgradesGiverData);
-
-  const maps = Object.keys(upgradeData);
-  const regionNames = [];
-  const regions = new Map<string, string[]>();
-  maps.forEach(map => {
-    const region = map.substring(6, 11).toUpperCase();
-    if (region !== 'ONE_C') {
-      let regionMaps = regions.get(region);
-      if (!regionMaps) {
-        regionNames.push(region);
-        regionMaps = [];
-        regions.set(region, regionMaps);
-      }
-      regionMaps.push(map);
-    }
-  });
-
-  regionNames.sort((a, b) => {
-    const idA = translate(a);
-    const idB = translate(b);
-    return (idA < idB) ? -1 : 1;
-  });
 
   const MapUpgrades = ({map}) => {
     const upgradeMap = upgradeData[map];
-    const upgrades = Object.values(upgradeData[map]);
+    if (!upgradeMap) {
+      return <></>;
+    }
+    const upgrades = Object.values(upgradeMap);
     let unknown = 0;
     let discovered = 0;
     let found = 0;
@@ -106,29 +98,25 @@ const Upgrades = ({data}: Params) => {
       <MapName><I18n name={map}/></MapName>
       <Status>{unknown} Unknown, {discovered} Discovered, {found} Obtained</Status>
       <ButtonContainer>
-        {unknown > 0 ? <button onClick={discoverAll}>Discover All</button> : <></>}
+        {unknown > 0 ? <Button onClick={discoverAll}>Discover All</Button> : <></>}
       </ButtonContainer>
       <ButtonContainer>
-        {unknown > 0 || discovered > 0 ? <button onClick={obtainAll}>Obtain All</button> : <></>}
+        {unknown > 0 || discovered > 0 ? <Button onClick={obtainAll}>Obtain All</Button> : <></>}
       </ButtonContainer>
       <ButtonContainer>
-        {found > 0 || discovered > 0 ? <button onClick={resetAll}>Reset All</button> : <></>}
+        {found > 0 || discovered > 0 ? <Button onClick={resetAll}>Reset All</Button> : <></>}
       </ButtonContainer>
     </UpgradeRow>;
   };
 
-  return <Accordion title="Upgrades">
+  return <div>
+
+    <SectionTitle>Upgrades</SectionTitle>
+
     {
-      regionNames.map(region => {
-        return <>
-          <RegionName><I18n name={region}/></RegionName>
-          {
-            regions.get(region).map(map => <MapUpgrades map={map}/>)
-          }
-        </>
-      })
+      region.levels.map(map => <MapUpgrades map={'level_' + map.toLowerCase()}/>)
     }
-  </Accordion>
+  </div>
 }
 
 export default Upgrades

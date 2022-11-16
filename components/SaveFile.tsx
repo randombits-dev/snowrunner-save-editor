@@ -1,5 +1,6 @@
 import React from 'react';
 import {SaveGame} from "../definitions/ISaveGame";
+import ActionButton from "@/components/ActionButton";
 
 interface Params {
   data: SaveGame;
@@ -26,7 +27,7 @@ const SaveFile = ({data}: Params) => {
   };
 
   return (
-    <button onClick={saveFile}>Save File</button>
+    <ActionButton onClick={saveFile}>Save File</ActionButton>
   );
 }
 

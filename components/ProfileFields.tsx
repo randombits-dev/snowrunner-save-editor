@@ -8,9 +8,11 @@ interface Params {
 }
 
 const ProfileContainer = styled.div`
+  //padding: 10px;
 `;
 
 const FieldContainer = styled.div`
+  padding: 5px;
   display: flex;
 `;
 
@@ -42,18 +44,18 @@ const ProfileFields = ({profileData}: Params) => {
 
   return (
     <ProfileContainer>
-      <h2>Profile</h2>
+      {/*<h2>Profile</h2>*/}
       <FieldContainer>
         <FieldLabel>Money:</FieldLabel>
         <FieldInput type="number" value={data.money} onChange={onMoneyChange}/>
       </FieldContainer>
       <FieldContainer>
         <FieldLabel>Rank:</FieldLabel>
-        <FieldInput type="number" value={data.rank} onChange={onRankChange}/>
+        <FieldInput type="number" value={data.rank} onChange={onRankChange} min={1} max={30}/>
       </FieldContainer>
       <FieldContainer>
         <FieldLabel>XP (calculated based on rank):</FieldLabel>
-        <div>{data.experience}</div>
+        <div>{data.experience || 'Invalid Rank'}</div>
       </FieldContainer>
     </ProfileContainer>
   );

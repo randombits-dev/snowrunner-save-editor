@@ -52,7 +52,9 @@ export interface TruckDeliveryState {
 }
 
 export interface TruckRepairState {
-
+  truckId: string;
+  isRefueled: boolean;
+  isRepaired: boolean;
 }
 
 export interface VisitZonesState {

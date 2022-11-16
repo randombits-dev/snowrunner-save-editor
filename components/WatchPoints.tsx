@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {WatchPointsData} from "../definitions/ISaveGame";
 import I18n from "@/components/I18n";
-import Accordion from "@/components/Accordion";
+import AccordionItem from "@/components/accordion/AccordionItem";
 import styled from "styled-components";
 
 interface Params {
@@ -68,11 +68,11 @@ const WatchPoints = ({data}: Params) => {
   };
 
   return (
-    <Accordion title="WatchPoints">
+    <AccordionItem title="WatchPoints">
       {
         mapList.map(map => <MapWatchPoints key={map} map={map}/>)
       }
-    </Accordion>
+    </AccordionItem>
   );
 }
 

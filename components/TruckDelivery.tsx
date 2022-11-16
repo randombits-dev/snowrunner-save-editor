@@ -10,10 +10,11 @@ interface Params {
 const CargoContainer = styled.div`
   display: flex;
   align-items: center;
+  padding: 5px;
 `;
 
 const CargoType = styled.div`
-  padding: 5px;
+
 `;
 
 const CargoInput = styled.input`
@@ -33,7 +34,7 @@ const TruckDelivery = ({delivery}: Params) => {
   return (
     <CargoContainer>
       <CargoType><I18n name={delivery.truckId}/></CargoType>
-      <div>to <I18n name={delivery.deliveryZones[0]}/> (<I18n name={delivery.mapDelivery}/>):</div>
+      <div>&nbsp;to&nbsp;<I18n name={delivery.deliveryZones[0]}/> (<I18n name={delivery.mapDelivery}/>):</div>
       <CargoInput type="checkbox" checked={curValue} onChange={onCurValueChange}/>
     </CargoContainer>
   );

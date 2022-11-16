@@ -14,7 +14,6 @@ const Button = styled.button`
   color: inherit;
   padding: 10px 20px;
   cursor: pointer;
-  width: 100%;
 `
 
 const ActionButton = ({children, onClick, disabled}: Props) => (

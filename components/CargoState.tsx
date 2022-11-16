@@ -10,10 +10,11 @@ interface Params {
 const CargoContainer = styled.div`
   display: flex;
   align-items: center;
+  padding: 5px;
 `;
 
 const CargoType = styled.div`
-  padding: 5px;
+  //padding: 5px;
 `;
 
 const CargoInput = styled.input`
@@ -35,7 +36,7 @@ const CargoState = ({data}: Params) => {
   return (
     <CargoContainer>
       <CargoType><I18n name={data.cargoState.type}/></CargoType>
-      <div>to <I18n name={data.zones[0]}/> (<I18n name={data.map}/>):</div>
+      <div>&nbsp;to&nbsp;<I18n name={data.zones[0]}/> (<I18n name={data.map}/>):</div>
       <CargoInput type="number" value={curValue} onChange={onCurValueChange}/>
       <div> of {data.cargoState.aimValue}</div>
     </CargoContainer>

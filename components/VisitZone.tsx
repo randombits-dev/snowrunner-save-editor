@@ -8,6 +8,10 @@ interface Params {
   zoneState: ZoneState;
 }
 
+const VisitContainer = styled.div`
+  padding: 5px;
+`;
+
 const CompletedCheckbox = styled.input`
   margin: 0 5px;
   width: 30px;
@@ -23,10 +27,10 @@ const VisitZone = ({map, zoneState}: Params) => {
   };
 
   return (
-    <div>
+    <VisitContainer>
       Visit: <I18n name={zoneState.zone}/> (<I18n name={map}/>)
       <CompletedCheckbox type="checkbox" checked={curValue} onChange={onCurValueChange}/>
-    </div>
+    </VisitContainer>
   );
 }
 

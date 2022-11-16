@@ -2,15 +2,34 @@ import React from 'react';
 import {ObjectiveState} from "../definitions/ISaveGame";
 import CargoState from "@/components/CargoState";
 import I18n from "@/components/I18n";
-import Card from "@/components/card/Card";
-import CardTitle from "@/components/card/CardTitle";
-import CardContent from "@/components/card/CardContent";
 import TruckDelivery from "@/components/TruckDelivery";
 import VisitZone from "@/components/VisitZone";
+import styled from "styled-components";
+import TruckRepair from "@/components/TruckRepair";
 
 interface Params {
   objective: ObjectiveState;
 }
+
+const ObjectiveContainer = styled.div`
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+`;
+
+const ObjectiveName = styled.div`
+  width: 200px;
+  padding: 5px;
+`;
+
+const ObjectiveTasks = styled.div`
+  //padding: 5px;
+`;
+
+const ObjectiveStageNum = styled.div`
+  padding: 5px;
+`;
 
 const CargoDeliveries = ({stage}) => {
   if (stage.cargoDeliveryActions) {
@@ -28,6 +47,14 @@ const TruckDeliveries = ({stage}) => {
   }
 };
 
+const TruckRepairs = ({stage}) => {
+  if (stage.truckRepairStates) {
+    return stage.truckRepairStates.map((repair, index) => {
+      return <TruckRepair key={index} repair={repair}/>
+    });
+  }
+};
+
 const VisitZones = ({stage}) => {
   if (stage.visitAllZonesState) {
     return stage.visitAllZonesState.zoneStates.map((zoneState, index) => {
@@ -37,17 +64,25 @@ const VisitZones = ({stage}) => {
 };
 
 const ObjectiveDetails = ({objective}: Params) => {
-  const stage = objective.stagesState[0];
-
   return (
-    <Card>
-      <CardTitle><I18n name={objective.id}/></CardTitle>
-      <CardContent>
-        <CargoDeliveries stage={stage}/>
-        <TruckDeliveries stage={stage}/>
-        <VisitZones stage={stage}/>
-      </CardContent>
-    </Card>
+    <ObjectiveContainer>
+      <ObjectiveName><I18n name={objective.id}/></ObjectiveName>
+      <ObjectiveTasks>
+        {
+          objective.stagesState.map((stage, index) =>
+            <>
+              {
+                objective.stagesState.length > 1 ? <ObjectiveStageNum>Stage {index + 1}:</ObjectiveStageNum> : <></>
+              }
+              <CargoDeliveries stage={stage}/>
+              <TruckDeliveries stage={stage}/>
+              <TruckRepairs stage={stage}/>
+              <VisitZones stage={stage}/>
+            </>
+          )
+        }
+      </ObjectiveTasks>
+    </ObjectiveContainer>
   );
 }
 
