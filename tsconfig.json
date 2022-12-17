@@ -23,27 +23,12 @@
     "strict": true,
     "target": "esnext",
     "incremental": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/components/*": [
-        "components/*"
-      ],
-      "@/pages/*": [
-        "pages/*"
-      ],
-      "@/hooks/*": [
-        "hooks/*"
-      ],
-      "@/providers/*": [
-        "providers/*"
-      ]
-    }
+    "baseUrl": "src"
   },
   "exclude": [
     ".yarn"
   ],
   "include": [
-    "**/*.ts",
-    "**/*.tsx"
+    "src"
   ]
 }
