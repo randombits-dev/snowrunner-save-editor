@@ -4,7 +4,7 @@ import React, {useState} from "react";
 import SaveFile from "SaveFile";
 import styled from "styled-components";
 import AccordionItem from "accordion/AccordionItem";
-import Instructions from "Instructions";
+import Header from "Header";
 import {REGIONS} from "definitions/levels";
 import Upgrades from "Upgrades";
 import MissionList from "MissionList";
@@ -43,7 +43,7 @@ const App = () => {
 
   return (
     <>
-      <Instructions hasData={!!data}></Instructions>
+      <Header hasData={!!data}></Header>
       <FileContainer>
         {
           data ? <SaveFile data={data}></SaveFile> : <FileLoader onData={setData}></FileLoader>

@@ -4,7 +4,7 @@ import {createRoot, Root} from "react-dom/client";
 import I18nProvider from "providers/I18nProvider";
 import {GlobalStyle} from "providers/GlobalStyle";
 
-if (!window.customElements.get('snowrunner-save-editor')) {
+if (!window.customElements.get('randombits-snowrunner')) {
   class ExternalApp extends HTMLElement {
     private reactRoot: Root = null;
 
@@ -22,5 +22,5 @@ if (!window.customElements.get('snowrunner-save-editor')) {
     }
   }
 
-  window.customElements.define('snowrunner-save-editor', ExternalApp);
+  window.customElements.define('randombits-snowrunner', ExternalApp);
 }
