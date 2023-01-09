@@ -5,21 +5,21 @@ module.exports = {
   ...prodConfig,
   mode: 'development',
   output: {
-    publicPath: 'http://localhost:8082/',
+    publicPath: 'http://localhost:3101/',
     clean: true
   },
   optimization: {
     minimize: false
   },
   devServer: {
-    port: 8082,
+    port: 3101,
     hot: true,
     historyApiFallback: true
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Hot Module Replacement',
-      template: "./public/index.html"
+      template: "./src/index.html"
     })
   ]
 };

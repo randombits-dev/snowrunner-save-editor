@@ -1,14 +1,11 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-
-require('dotenv').config();
 const deps = require("./package.json").dependencies;
-const HOST = process.env.HOST;
 
 module.exports = {
   mode: 'production',
   output: {
     filename: "[name].[contenthash].js",
-    publicPath: HOST,
     clean: true
   },
   module: {
@@ -46,27 +43,33 @@ module.exports = {
       'node_modules',
       'src'
     ],
-    extensions: ['.tsx', '.ts', '.js']
+    extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      react: "preact/compat",
+      'react-dom': "preact/compat"
+    }
   },
   plugins: [
     new ModuleFederationPlugin({
       name: "snowrunner",
       filename: "remoteEntry.js",
-      remotes: {},
       exposes: {
-        './SnowrunnerIndex': './src/bootstrap'
+        './bootstrap': './src/bootstrap'
       },
       shared: {
         ...deps,
-        react: {
+        'preact': {
           singleton: true,
-          requiredVersion: deps.react
+          requiredVersion: deps.preact
         },
-        'react-dom': {
+        'preact/hooks': {
           singleton: true,
-          requiredVersion: deps["react-dom"]
+          requiredVersion: deps.preact
         }
       },
-    })
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/index.html"
+    }),
   ],
 };

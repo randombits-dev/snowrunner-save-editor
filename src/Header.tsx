@@ -40,7 +40,7 @@ const HeaderText = styled.h1`
 
 const Header = ({hasData}: Params) => {
   return <><HeaderContainer>
-    <img width="75px" height="75px" src="https://assets1.ignimgs.com/2020/04/23/snowrunner---button-fin-1587603559932.jpg?width=75"/>
+    <img src="https://assets1.ignimgs.com/2020/04/23/snowrunner---button-fin-1587603559932.jpg?width=75"/>
     <HeaderText>Snowrunner Save Editor</HeaderText>
 
   </HeaderContainer>
