@@ -32,6 +32,7 @@ const Instructions = ({hasData}: Params) => {
 const HeaderContainer = styled.div`
   display: flex;
   align-items: start;
+  margin-bottom: 20px;
 `;
 
 const HeaderText = styled.h1`
@@ -40,7 +41,7 @@ const HeaderText = styled.h1`
 
 const Header = ({hasData}: Params) => {
   return <><HeaderContainer>
-    <img src="https://assets1.ignimgs.com/2020/04/23/snowrunner---button-fin-1587603559932.jpg?width=75"/>
+    <img width="100" src="https://assets1.ignimgs.com/2020/04/23/snowrunner---button-fin-1587603559932.jpg?width=100"/>
     <HeaderText>Snowrunner Save Editor</HeaderText>
 
   </HeaderContainer>

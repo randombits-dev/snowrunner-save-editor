@@ -30,7 +30,6 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "snowrunner",
       filename: "remoteEntry.js",
-      remotes: {},
       exposes: {
         './bootstrap': './src/bootstrap'
       },
