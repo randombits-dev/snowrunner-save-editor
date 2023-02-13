@@ -1,25 +1,31 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const prodConfig = require('./webpack.config');
+const baseConfig = require('./webpack.config');
 
 module.exports = {
-  ...prodConfig,
+  ...baseConfig,
   mode: 'development',
+  entry: 'entry-client.tsx',
   output: {
-    publicPath: 'http://localhost:3101/',
-    clean: true
-  },
-  optimization: {
-    minimize: false
+    filename: "[name].js",
   },
   devServer: {
     port: 3101,
     hot: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+    }
+  },
+  externals: {
+    'preact': 'preact'
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Hot Module Replacement',
-      template: "./src/index.html"
-    })
+      filename: 'remote.html',
+      template: "./src/remote.html",
+      inject: false
+    }),
   ]
 };

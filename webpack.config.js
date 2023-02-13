@@ -1,13 +1,5 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const deps = require("./package.json").dependencies;
-
 module.exports = {
-  mode: 'production',
-  output: {
-    filename: "[name].[contenthash].js",
-    clean: true
-  },
+  mode: "production",
   module: {
     rules: [
       {
@@ -46,30 +38,8 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
       react: "preact/compat",
-      'react-dom': "preact/compat"
+      'react-dom': "preact/compat",
+      "react/jsx-runtime": "preact/jsx-runtime"
     }
-  },
-  plugins: [
-    new ModuleFederationPlugin({
-      name: "snowrunner",
-      filename: "remoteEntry.js",
-      exposes: {
-        './bootstrap': './src/bootstrap'
-      },
-      shared: {
-        ...deps,
-        'preact': {
-          singleton: true,
-          requiredVersion: deps.preact
-        },
-        'preact/hooks': {
-          singleton: true,
-          requiredVersion: deps.preact
-        }
-      },
-    }),
-    new HtmlWebpackPlugin({
-      template: "./src/index.html"
-    }),
-  ],
+  }
 };
