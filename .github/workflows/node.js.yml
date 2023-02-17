@@ -31,3 +31,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/deploy-pages@v1
+
+  container:
+    needs: deploy
+    steps:
+      - uses: fjogeleit/http-request-action@v1
+        with:
+          url: ${{ secrets.DEPLOY_CONTAINER }}
+          method: 'POST'
