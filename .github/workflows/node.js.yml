@@ -15,14 +15,7 @@ jobs:
           cache: 'yarn'
       - run: yarn install --immutable
       - run: yarn run build
-      - name: Deploy
-        uses: s0/git-publish-subdir-action@v2.6.0
-        env:
-          REPO: self
-          BRANCH: dist
-          FOLDER: dist
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: fjogeleit/http-request-action@v1
+      - name: Create Artifact
+        uses: actions/upload-pages-artifact@v1.0.7
         with:
-          url: ${{ secrets.DEPLOY_CONTAINER }}
-          method: 'POST'
+          path: 'dist'
