@@ -19,3 +19,15 @@ jobs:
         uses: actions/upload-pages-artifact@v1.0.7
         with:
           path: 'dist'
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/deploy-pages@v1
