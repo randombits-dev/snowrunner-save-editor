@@ -8,6 +8,7 @@
     "deploy": "yarn build && gh-pages -d dist"
   },
   "dependencies": {
+    "@mdx-js/loader": "^2.3.0",
     "@preact/compat": "^17.1.2",
     "preact": "^10.11.3",
     "preact-render-to-string": "^5.2.6",
