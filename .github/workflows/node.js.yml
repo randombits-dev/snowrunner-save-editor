@@ -3,8 +3,6 @@ name: Build
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
@@ -17,3 +15,14 @@ jobs:
           cache: 'yarn'
       - run: yarn install --immutable
       - run: yarn run build
+      - name: Deploy
+        uses: s0/git-publish-subdir-action@v2.6.0
+        env:
+          REPO: self
+          BRANCH: dist
+          FOLDER: dist
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: fjogeleit/http-request-action@v1
+        with:
+          url: ${{ secrets.DEPLOY_CONTAINER }}
+          method: 'POST'
