@@ -1,0 +1,32 @@
+:root {
+  --back-0: #ffe9c2;
+  --back-1: #e1eefe;
+  --back-2: #fafafa;
+  --back-3: var(--text-1);
+  --back-4: var(--back-2);
+  --text-1: #444;
+  --text-2: var(--text-1);
+  --border-radius-1: 10px;
+  --border-radius-2: 20px;
+  --border-width: 1px;
+  --border-color: #444;
+  --font-1: 'Capriola', sans-serif;
+  --font-2: 'Montserrat', sans-serif;
+  --font-size-text: 18px;
+  --letter-spacing-text: 0px;
+  --font-size-caption: 15px;
+  --hover-shadow: 2px;
+  --shadow-color: var(--text-1);
+}
+
+.card {
+  border: var(--border-width) solid var(--border-color);
+  background-color: var(--back-1);
+  border-radius: var(--border-radius-1);
+  position: relative;
+  margin-top: 30px;
+}
+
+.card-contents {
+  padding: 20px;
+}

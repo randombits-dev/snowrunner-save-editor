@@ -4,7 +4,7 @@ const baseConfig = require('./webpack.config');
 module.exports = {
   ...baseConfig,
   mode: 'development',
-  entry: 'entry-client.tsx',
+  entry: 'dev.tsx',
   output: {
     filename: "[name].js",
   },
@@ -24,7 +24,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'remote.html',
-      template: "./src/remote.html",
+      template: "./src/dev.html",
       inject: false
     }),
   ]

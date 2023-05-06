@@ -1,15 +1,15 @@
-import FileLoader from "FileLoader";
+import FileLoader from "components/FileLoader";
 import {SaveGame} from "definitions/ISaveGame";
 import React, {useState} from "react";
-import SaveFile from "SaveFile";
+import SaveFile from "components/SaveFile";
 import styled from "styled-components";
-import AccordionItem from "accordion/AccordionItem";
+import AccordionItem from "components/accordion/AccordionItem";
 import {REGIONS} from "definitions/levels";
-import Upgrades from "Upgrades";
-import MissionList from "MissionList";
-import Accordion from "accordion/Accordion";
+import Upgrades from "components/Upgrades";
+import MissionList from "components/MissionList";
+import Accordion from "components/accordion/Accordion";
 import {useI18n} from "providers/I18nProvider";
-import ProfileFields from "ProfileFields";
+import ProfileFields from "components/ProfileFields";
 import Instructions2 from "./instructions2.mdx";
 import Instructions1 from "./instructions1.mdx";
 

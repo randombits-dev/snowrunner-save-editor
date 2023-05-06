@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {CargoDeliveryAction} from "definitions/ISaveGame";
 import styled from "styled-components";
-import I18n from "I18n";
+import I18n from "components/I18n";
 
 interface Params {
   data: CargoDeliveryAction;

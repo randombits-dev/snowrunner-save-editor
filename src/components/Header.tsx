@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
-import Instructions1 from './instructions1.mdx';
-import Instructions2 from './instructions2.mdx';
+import Instructions1 from '../instructions1.mdx';
+import Instructions2 from '../instructions2.mdx';
 
 interface Params {
   hasData: boolean;

@@ -1,11 +1,11 @@
 import React from 'react';
 import {ObjectiveState} from "definitions/ISaveGame";
-import CargoState from "CargoState";
-import I18n from "I18n";
-import TruckDelivery from "TruckDelivery";
-import VisitZone from "VisitZone";
+import CargoState from "components/CargoState";
+import I18n from "components/I18n";
+import TruckDelivery from "components/TruckDelivery";
+import VisitZone from "components/VisitZone";
 import styled from "styled-components";
-import TruckRepair from "TruckRepair";
+import TruckRepair from "components/TruckRepair";
 
 interface Params {
   objective: ObjectiveState;

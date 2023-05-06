@@ -1,7 +1,7 @@
 import React from 'react';
 import {SaveGame} from "definitions/ISaveGame";
 import {useI18n} from "providers/I18nProvider";
-import ObjectiveDetails from "ObjectiveDetails";
+import ObjectiveDetails from "components/ObjectiveDetails";
 import styled from "styled-components";
 
 interface Params {

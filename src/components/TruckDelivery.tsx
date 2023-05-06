@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {TruckDeliveryState} from "definitions/ISaveGame";
-import I18n from "I18n";
+import I18n from "components/I18n";
 import styled from "styled-components";
 
 interface Params {

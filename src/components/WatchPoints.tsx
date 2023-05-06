@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {WatchPointsData} from "definitions/ISaveGame";
-import I18n from "I18n";
-import AccordionItem from "accordion/AccordionItem";
+import I18n from "components/I18n";
+import AccordionItem from "components/accordion/AccordionItem";
 import styled from "styled-components";
 
 interface Params {

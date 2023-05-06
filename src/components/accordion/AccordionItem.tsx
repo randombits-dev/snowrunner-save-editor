@@ -1,7 +1,7 @@
 import React, {ReactNode} from 'react';
 import styled from "styled-components";
-import {DownArrow, RightArrow} from "ArrowIcons";
-import {useAccordion} from "accordion/Accordion";
+import {DownArrow, RightArrow} from "components/ArrowIcons";
+import {useAccordion} from "components/accordion/Accordion";
 
 interface Params {
   id?: string;

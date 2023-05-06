@@ -1,6 +1,6 @@
 import React from 'react';
 import {SaveGame} from "definitions/ISaveGame";
-import ActionButton from "ActionButton";
+import ActionButton from "components/ActionButton";
 
 interface Params {
   data: SaveGame;
