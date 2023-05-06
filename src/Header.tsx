@@ -15,23 +15,36 @@ const Instructions = ({hasData}: Params) => {
   }
 };
 
-const HeaderContainer = styled.div`
-  display: flex;
-  align-items: start;
-  margin-bottom: 20px;
+const Container = styled.div`
+  overflow: hidden;
+  //height: 150px;
 `;
 
 const HeaderText = styled.h1`
   padding-left: 25px;
+  flex: 1 1 auto;
+  display: inline-block;
+`;
+
+const Image = styled.img`
+  //height: 100%;
+  max-width: 300px;
+  object-fit: cover;
+  border-left: var(--border-width) solid var(--border-color);
+  border-bottom: var(--border-width) solid var(--border-color);
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 20px;
 `;
 
 const Header = ({hasData}: Params) => {
-  return <><HeaderContainer>
-    <img width="100" src="https://assets1.ignimgs.com/2020/04/23/snowrunner---button-fin-1587603559932.jpg?width=100"/>
+  return <Container>
     <HeaderText>Snowrunner Save Editor</HeaderText>
-  </HeaderContainer>
-  <Instructions hasData={hasData}/>
-    </>
+    <Image src="/images/snowrunner.jpg"/>
+    <div className="card-contents">
+      <Instructions hasData={hasData}/>
+    </div>
+  </Container>
 }
 
 export default Header

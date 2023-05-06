@@ -11,15 +11,16 @@ interface Params {
 
 const AccordionContainer = styled.div`
   margin-bottom: 10px;
-  border: 1px solid ${props => props.theme.border};
+  border: var(--border-width) solid var(--border-color);
+  margin-top: 10px !important;
 `;
 
 const AccordionHeader = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
-  background-color: #ddd;
-  padding: 5px;
+
+  //padding: 5px;
 `;
 
 const AccordionIcon = styled.div`
@@ -27,12 +28,11 @@ const AccordionIcon = styled.div`
 `;
 
 const AccordionTitle = styled.div`
-  font-size: 18px;
 `;
 
 const AccordionContents = styled.div`
-  padding: 10px;
-  font-size: 14px;
+  margin-top: 20px;
+  font-size: var(--font-size-caption);
 `;
 
 const AccordionItem = ({id, title, children}: Params) => {
@@ -48,7 +48,7 @@ const AccordionItem = ({id, title, children}: Params) => {
   const isExpanded = isOpen(id);
 
   return (
-    <AccordionContainer>
+    <AccordionContainer className="card card-contents">
       <AccordionHeader onClick={changeExpansionState}>
         <AccordionIcon>{isExpanded ? <DownArrow/> : <RightArrow/>}</AccordionIcon>
         <AccordionTitle>{title}</AccordionTitle>

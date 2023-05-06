@@ -10,10 +10,10 @@ interface Params {
 }
 
 const SectionTitle = styled.div`
-  font-size: 16px;
   margin: 0 0 5px 5px;
   padding-bottom: 3px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--text-1);
+  font-size: var(--font-size-text);
 `;
 
 const UpgradeRow = styled.div`
@@ -37,12 +37,10 @@ const ButtonContainer = styled.div`
   padding: 0 2px;
 `;
 
-const Button = styled.button`
-  background-color: ${props => props.theme.action};
-  border: 1px solid ${props => props.theme.border};
-  color: inherit;
-  padding: 5px 10px;
+const Button = styled.div`
   cursor: pointer;
+  text-decoration: underline;
+  padding: 5px 10px;
   width: 100%;
 `
 

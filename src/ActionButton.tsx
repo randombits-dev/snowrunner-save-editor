@@ -9,11 +9,7 @@ type Props = {
 }
 
 const Button = styled.button`
-  background-color: ${props => props.theme.action};
-  border: 1px solid ${props => props.theme.border};
-  color: inherit;
-  padding: 10px 20px;
-  cursor: pointer;
+
 `
 
 const ActionButton = ({children, onClick, disabled}: Props) => (

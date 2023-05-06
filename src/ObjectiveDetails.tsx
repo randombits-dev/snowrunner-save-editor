@@ -15,7 +15,7 @@ const ObjectiveContainer = styled.div`
   margin-left: 10px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--text-1);
 `;
 
 const ObjectiveName = styled.div`

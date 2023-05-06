@@ -10,10 +10,11 @@ interface Params {
 }
 
 const SectionTitle = styled.div`
-  font-size: 16px;
   margin: 10px 0 5px 5px;
   padding-bottom: 3px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--text-1);
+  font-size: var(--font-size-text);
+
 `;
 
 const NoAcceptedTasks = styled.div`

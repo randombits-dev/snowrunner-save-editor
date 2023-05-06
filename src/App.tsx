@@ -4,17 +4,51 @@ import React, {useState} from "react";
 import SaveFile from "SaveFile";
 import styled from "styled-components";
 import AccordionItem from "accordion/AccordionItem";
-import Header from "Header";
 import {REGIONS} from "definitions/levels";
 import Upgrades from "Upgrades";
 import MissionList from "MissionList";
 import Accordion from "accordion/Accordion";
 import {useI18n} from "providers/I18nProvider";
 import ProfileFields from "ProfileFields";
+import Instructions2 from "./instructions2.mdx";
+import Instructions1 from "./instructions1.mdx";
 
 const FileContainer = styled.div`
   padding: 10px 0;
   width: 1000px;
+`;
+
+const Instructions = ({hasData}: Params) => {
+  if (hasData) {
+    return <Instructions2/>
+  } else {
+    return <Instructions1/>
+  }
+};
+
+const HeaderText = styled.h1`
+  padding-left: 25px;
+  flex: 1 1 auto;
+  display: inline-block;
+`;
+
+const Card = styled('div')`
+  overflow: hidden;
+`;
+
+const Image = styled.img`
+  //height: 100%;
+  max-width: 300px;
+  object-fit: cover;
+  border-left: var(--border-width) solid var(--border-color);
+  border-bottom: var(--border-width) solid var(--border-color);
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 20px;
+`;
+
+const DataContainer = styled('div')`
+    clear: right;
 `;
 
 const App = () => {
@@ -43,13 +77,22 @@ const App = () => {
 
   return (
     <>
-      <Header hasData={!!data}></Header>
-      <FileContainer>
-        {
-          data ? <SaveFile data={data}></SaveFile> : <FileLoader onData={setData}></FileLoader>
-        }
-      </FileContainer>
-      {renderFileData()}
+    <Card className="card">
+        <HeaderText>Snowrunner Save Editor</HeaderText>
+        <Image src="/images/snowrunner.jpg"/>
+        <div className="card-contents">
+          <Instructions hasData={!!data}/>
+          <FileContainer>
+            {
+              data ? <SaveFile data={data}></SaveFile> : <FileLoader onData={setData}></FileLoader>
+            }
+          </FileContainer>
+          <DataContainer>
+
+          </DataContainer>
+        </div>
+    </Card>
+        {renderFileData()}
     </>
   );
 }
