@@ -3,19 +3,12 @@ import {SaveGame} from "definitions/ISaveGame";
 import {useI18n} from "providers/I18nProvider";
 import ObjectiveDetails from "components/ObjectiveDetails";
 import styled from "styled-components";
+import {SectionTitle} from "./SectionTitle";
 
 interface Params {
   region: string;
   data: SaveGame;
 }
-
-const SectionTitle = styled.div`
-  margin: 10px 0 5px 5px;
-  padding-bottom: 3px;
-  border-bottom: 1px solid var(--text-1);
-  font-size: var(--font-size-text);
-
-`;
 
 const NoAcceptedTasks = styled.div`
   margin-left: 10px;
@@ -36,17 +29,6 @@ const MissionList = ({region, data}: Params) => {
   return (
     <div>
       <SectionTitle>Tasks</SectionTitle>
-      {/*<h4>Notes:</h4>*/}
-      {/*<ol>*/}
-      {/*  <li>You must accept a contract/task in the game for it to show up in this list.</li>*/}
-      {/*  <li>If you are using this to make a task easier (less deliveries), make the adjustment before you make the final delivery in the*/}
-      {/*    game. Then you*/}
-      {/*    will receive the money & XP reward.*/}
-      {/*  </li>*/}
-      {/*  <li>Completing a task using this tool will not give you money or XP reward. You can adjust the money/rank manually if you*/}
-      {/*    wish.*/}
-      {/*  </li>*/}
-      {/*</ol>*/}
       {
         keys.length > 0 ?
           keys.map(key => <ObjectiveDetails key={key} objective={objectives[key]}/>)

@@ -79,7 +79,7 @@ const App = () => {
     <>
     <Card className="card">
         <HeaderText>Snowrunner Save Editor</HeaderText>
-        <Image src="/images/snowrunner.jpg"/>
+        {/*<Image src="/images/snowrunner.jpg"/>*/}
         <div className="card-contents">
           <Instructions hasData={!!data}/>
           <FileContainer>

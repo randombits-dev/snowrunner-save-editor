@@ -3,18 +3,12 @@ import {SaveGameValue} from "definitions/ISaveGame";
 import I18n from "components/I18n";
 import styled from "styled-components";
 import {IRegion} from "definitions/levels";
+import {SectionTitle} from "./SectionTitle";
 
 interface Params {
   region: IRegion;
   data: SaveGameValue;
 }
-
-const SectionTitle = styled.div`
-  margin: 0 0 5px 5px;
-  padding-bottom: 3px;
-  border-bottom: 1px solid var(--text-1);
-  font-size: var(--font-size-text);
-`;
 
 const UpgradeRow = styled.div`
   margin-left: 10px;

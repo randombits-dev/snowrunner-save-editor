@@ -11,7 +11,7 @@ interface Params {
 
 const AccordionContainer = styled.div`
   margin-bottom: 10px;
-  border: var(--border-width) solid var(--border-color);
+  border: 1px solid var(--color-content);
   margin-top: 10px !important;
 `;
 
