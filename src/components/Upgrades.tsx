@@ -22,7 +22,6 @@ const MapName = styled.div`
 `;
 
 const Status = styled.div`
-  width: 300px;
   padding: 5px 10px;
 `;
 

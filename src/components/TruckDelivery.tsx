@@ -18,8 +18,8 @@ const CargoType = styled.div`
 `;
 
 const CargoInput = styled.input`
-  margin: 0 5px;
-  width: 30px;
+  margin: 0;
+  width: 100px;
 `;
 
 const TruckDelivery = ({delivery}: Params) => {
@@ -33,9 +33,9 @@ const TruckDelivery = ({delivery}: Params) => {
 
   return (
     <CargoContainer>
-      <CargoType><I18n name={delivery.truckId}/></CargoType>
-      <div>&nbsp;to&nbsp;<I18n name={delivery.deliveryZones[0]}/> (<I18n name={delivery.mapDelivery}/>):</div>
       <CargoInput type="checkbox" checked={curValue} onChange={onCurValueChange}/>
+      <CargoType><I18n name={delivery.truckId}/></CargoType>
+      <div>&nbsp;to&nbsp;<I18n name={delivery.deliveryZones[0]}/> (<I18n name={delivery.mapDelivery}/>)</div>
     </CargoContainer>
   );
 }

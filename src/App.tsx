@@ -12,10 +12,15 @@ import {useI18n} from "providers/I18nProvider";
 import ProfileFields from "components/ProfileFields";
 import Instructions2 from "./instructions2.mdx";
 import Instructions1 from "./instructions1.mdx";
+import './index.scss';
+
+const MainContainer = styled('div')`
+    max-width: 1200px;
+  margin: 0 auto;
+`;
 
 const FileContainer = styled.div`
   padding: 10px 0;
-  width: 1000px;
 `;
 
 const Instructions = ({hasData}: Params) => {
@@ -29,26 +34,7 @@ const Instructions = ({hasData}: Params) => {
 const HeaderText = styled.h1`
   padding-left: 25px;
   flex: 1 1 auto;
-  display: inline-block;
-`;
-
-const Card = styled('div')`
-  overflow: hidden;
-`;
-
-const Image = styled.img`
-  //height: 100%;
-  max-width: 300px;
-  object-fit: cover;
-  border-left: var(--border-width) solid var(--border-color);
-  border-bottom: var(--border-width) solid var(--border-color);
-  float: right;
-  margin-left: 20px;
-  margin-bottom: 20px;
-`;
-
-const DataContainer = styled('div')`
-    clear: right;
+  text-align: center;
 `;
 
 const App = () => {
@@ -76,8 +62,8 @@ const App = () => {
   };
 
   return (
-    <>
-    <Card className="card">
+    <MainContainer>
+    <div className="card">
         <HeaderText>Snowrunner Save Editor</HeaderText>
         {/*<Image src="/images/snowrunner.jpg"/>*/}
         <div className="card-contents">
@@ -87,13 +73,10 @@ const App = () => {
               data ? <SaveFile data={data}></SaveFile> : <FileLoader onData={setData}></FileLoader>
             }
           </FileContainer>
-          <DataContainer>
-
-          </DataContainer>
         </div>
-    </Card>
+    </div>
         {renderFileData()}
-    </>
+    </MainContainer>
   );
 }
 

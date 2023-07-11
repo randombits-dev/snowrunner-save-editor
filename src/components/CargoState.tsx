@@ -19,7 +19,16 @@ const CargoType = styled.div`
 
 const CargoInput = styled.input`
   margin: 0 5px;
-  width: 30px;
+  padding: 2px 5px;
+  width: 20px;
+`;
+
+const CargoTotal = styled('div')`
+    display: inline-block;
+`;
+
+const CargoInputContainer = styled.div`
+  width: 100px;
 `;
 
 const CargoState = ({data}: Params) => {
@@ -35,10 +44,13 @@ const CargoState = ({data}: Params) => {
 
   return (
     <CargoContainer>
+      <CargoInputContainer>
+        <CargoInput type="number" value={curValue} onChange={onCurValueChange} onFocus={(e) => e.target.select()}/>
+        <CargoTotal> of {data.cargoState.aimValue}</CargoTotal>
+      </CargoInputContainer>
       <CargoType><I18n name={data.cargoState.type}/></CargoType>
-      <div>&nbsp;to&nbsp;<I18n name={data.zones[0]}/> (<I18n name={data.map}/>):</div>
-      <CargoInput type="number" value={curValue} onChange={onCurValueChange}/>
-      <div> of {data.cargoState.aimValue}</div>
+      <div>&nbsp;to&nbsp;<I18n name={data.zones[0]}/> (<I18n name={data.map}/>)</div>
+
     </CargoContainer>
   );
 }

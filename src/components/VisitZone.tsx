@@ -13,8 +13,8 @@ const VisitContainer = styled.div`
 `;
 
 const CompletedCheckbox = styled.input`
-  margin: 0 5px;
-  width: 30px;
+  margin: 0;
+  width: 100px;
 `;
 
 const VisitZone = ({map, zoneState}: Params) => {
@@ -28,8 +28,8 @@ const VisitZone = ({map, zoneState}: Params) => {
 
   return (
     <VisitContainer>
-      Visit: <I18n name={zoneState.zone}/> (<I18n name={map}/>)
       <CompletedCheckbox type="checkbox" checked={curValue} onChange={onCurValueChange}/>
+      Visit: <I18n name={zoneState.zone}/> (<I18n name={map}/>)
     </VisitContainer>
   );
 }

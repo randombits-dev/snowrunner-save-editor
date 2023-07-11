@@ -13,7 +13,7 @@ const Button = styled.button`
 `
 
 const ActionButton = ({children, onClick, disabled}: Props) => (
-  <Button onClick={onClick} disabled={disabled}>{children}</Button>
+  <Button className="button" onClick={onClick} disabled={disabled}>{children}</Button>
 )
 
 export default ActionButton
