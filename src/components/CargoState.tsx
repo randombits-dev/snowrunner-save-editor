@@ -21,6 +21,12 @@ const CargoInput = styled.input`
   margin: 0 5px;
   padding: 2px 5px;
   width: 20px;
+  -moz-appearance: textfield;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
 `;
 
 const CargoTotal = styled('div')`

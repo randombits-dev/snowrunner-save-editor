@@ -12,7 +12,6 @@ import {useI18n} from "providers/I18nProvider";
 import ProfileFields from "components/ProfileFields";
 import Instructions2 from "./instructions2.mdx";
 import Instructions1 from "./instructions1.mdx";
-import './index.scss';
 
 const MainContainer = styled('div')`
     max-width: 1200px;
