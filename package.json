@@ -5,7 +5,7 @@
     "dev": "webpack serve --config=webpack.dev.js",
     "build": "webpack --config=webpack.ssg.js && node dist/ssg.js",
     "test": "jest test",
-    "deploy": "yarn build && gh-pages -d dist"
+    "deploy": "pnpm build && gh-pages -d dist"
   },
   "dependencies": {
     "@mdx-js/loader": "^2.3.0",
@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
+    "@babel/plugin-syntax-jsx": "^7.22.5",
     "@babel/plugin-transform-react-jsx": "^7.19.0",
     "@babel/plugin-transform-runtime": "^7.15.8",
     "@babel/preset-env": "^7.20.2",
