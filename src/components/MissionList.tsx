@@ -4,6 +4,7 @@ import {useI18n} from "providers/I18nProvider";
 import ObjectiveDetails from "components/ObjectiveDetails";
 import styled from "styled-components";
 import {SectionTitle} from "./SectionTitle";
+import {Store} from "../providers/store";
 
 interface Params {
   region: string;
@@ -17,7 +18,7 @@ const NoAcceptedTasks = styled.div`
 
 const MissionList = ({region, data}: Params) => {
   const {translate} = useI18n();
-  const objectives = data.CompleteSave.SslValue.objectiveStates;
+  const objectives = data[Store.saveKey].SslValue.objectiveStates;
   const keys = Object.keys(objectives).filter(key => key.substring(0, 5).toUpperCase() === region);
   // const missions = Object.values(data.CompleteSave.SslValue.objectiveStates);
   keys.sort((a, b) => {

@@ -12,6 +12,7 @@ import {useI18n} from "providers/I18nProvider";
 import ProfileFields from "components/ProfileFields";
 import Instructions2 from "./instructions2.mdx";
 import Instructions1 from "./instructions1.mdx";
+import {Store} from "./providers/store";
 
 const MainContainer = styled('div')`
     max-width: 1200px;
@@ -39,19 +40,20 @@ const HeaderText = styled.h1`
 const App = () => {
   const {translate} = useI18n();
   const [data, setData] = useState<SaveGame>(null);
+  const [fullData, setFullData] = useState<any>(null);
 
   const renderFileData = () => {
     if (data) {
       // const profileData = data.CompleteSave.SslValue.persistentProfileData;
       return <Accordion onlyOneOpen={true} initialOpen={['PROFILE']}>
         <AccordionItem id="PROFILE" title="Profile Data">
-          <ProfileFields profileData={data.CompleteSave.SslValue.persistentProfileData}/>
+          <ProfileFields profileData={data[Store.saveKey].SslValue.persistentProfileData}/>
         </AccordionItem>
         {
 
           REGIONS.map(region => {
             return <AccordionItem title={translate(region.id)} id={region.id}>
-              <Upgrades region={region} data={data.CompleteSave.SslValue}/>
+              <Upgrades region={region} data={data[Store.saveKey].SslValue}/>
               <MissionList region={region.id} data={data}/>
             </AccordionItem>
           })
@@ -59,7 +61,6 @@ const App = () => {
       </Accordion>;
     }
   };
-
   return (
     <MainContainer>
     <div className="card">
