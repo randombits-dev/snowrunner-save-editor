@@ -17,9 +17,9 @@ const SaveFile = ({data}: Params) => {
     });
 
     const text = JSON.stringify(data);
-    // const file = new Blob([text], {type: 'application/json'});
+    const blob = new Blob([text, '\u0000'], {type: 'application/json'});
     const element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + text);
+    element.href = URL.createObjectURL(blob);
     element.setAttribute('download', Store.saveKey + '.dat');
     element.style.display = 'none';
     document.body.appendChild(element);
