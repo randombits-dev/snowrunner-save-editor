@@ -12,7 +12,7 @@
     "@preact/compat": "^17.1.2",
     "preact": "^10.18.1",
     "preact-render-to-string": "^5.2.6",
-    "styled-components": "^5.0.0"
+    "styled-components": "^6.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.2",
