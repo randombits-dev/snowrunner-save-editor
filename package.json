@@ -23,7 +23,7 @@
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
     "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
+    "@types/react-dom": "^18.2.17",
     "@types/styled-components": "^5.1.30",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.8.1",
