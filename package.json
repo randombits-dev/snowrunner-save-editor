@@ -8,7 +8,7 @@
     "deploy": "pnpm build && gh-pages -d dist"
   },
   "dependencies": {
-    "@mdx-js/loader": "^2.3.0",
+    "@mdx-js/loader": "^3.0.1",
     "@preact/compat": "^17.1.2",
     "preact": "^10.19.6",
     "preact-render-to-string": "^6.4.0",
