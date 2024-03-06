@@ -1,4 +1,3 @@
-import * as React from 'react';
 import {ReactNode} from 'react';
 import styled from 'styled-components';
 
@@ -13,7 +12,7 @@ const Button = styled.button`
 `
 
 const ActionButton = ({children, onClick, disabled}: Props) => (
-  <Button className="button" onClick={onClick} disabled={disabled}>{children}</Button>
+  <Button className="btn-primary btn-small" onClick={onClick} disabled={disabled}>{children}</Button>
 )
 
 export default ActionButton
