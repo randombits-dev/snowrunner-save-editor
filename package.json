@@ -10,7 +10,7 @@
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",
     "@preact/compat": "^17.1.2",
-    "preact": "^10.22.0",
+    "preact": "^10.22.1",
     "preact-render-to-string": "^6.5.5",
     "styled-components": "^6.1.11"
   },
@@ -29,14 +29,14 @@
     "css-loader": "^7.1.2",
     "dotenv": "^16.4.5",
     "html-webpack-plugin": "^5.6.0",
-    "sass": "^1.77.5",
+    "sass": "^1.77.6",
     "sass-loader": "^14.2.1",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.5",
+    "typescript": "^5.5.2",
     "url-loader": "^4.1.1",
-    "webpack": "^5.92.0",
+    "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4"
   },
