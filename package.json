@@ -30,7 +30,7 @@
     "dotenv": "^16.4.5",
     "html-webpack-plugin": "^5.6.0",
     "sass": "^1.77.8",
-    "sass-loader": "^14.2.1",
+    "sass-loader": "^16.0.0",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
