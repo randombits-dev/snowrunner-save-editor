@@ -15,8 +15,8 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1(webpack@5.95.0(webpack-cli@5.1.4))
       '@preact/compat':
-        specifier: ^17.1.2
-        version: 17.1.2(preact@10.24.1)
+        specifier: ^18.3.1
+        version: 18.3.1(preact@10.24.1)
       preact:
         specifier: ^10.24.1
         version: 10.24.1
@@ -864,8 +864,8 @@ packages:
   '@mdx-js/mdx@3.0.1':
     resolution: {integrity: sha512-eIQ4QTrOWyL3LWEe/bu6Taqzq2HQvHcyTMaOrI95P2/LmJE7AsfPfgJGuFLPVqBUE1BC1rik3VIhU+s9u72arA==}
 
-  '@preact/compat@17.1.2':
-    resolution: {integrity: sha512-7pOZN9lMDDRQ+6aWvjwTp483KR8/zOpfS83wmOo3zfuLKdngS8/5RLbsFWzFZMGdYlotAhX980hJ75bjOHTwWg==}
+  '@preact/compat@18.3.1':
+    resolution: {integrity: sha512-Kog4PSRxtT4COtOXjsuQPV1vMXpUzREQfv+6Dmcy9/rMk0HOPK0HTE9fspFjAmY8R80T/T8gtgmZ68u5bOSngw==}
     peerDependencies:
       preact: '*'
 
@@ -3982,7 +3982,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@preact/compat@17.1.2(preact@10.24.1)':
+  '@preact/compat@18.3.1(preact@10.24.1)':
     dependencies:
       preact: 10.24.1
 
