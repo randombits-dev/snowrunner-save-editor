@@ -59,5 +59,15 @@ export const REGIONS: IRegion[] = [
     id: 'RU_08',
     name: 'Belozersk',
     levels: ['RU_08_01', 'RU_08_02', 'RU_08_03', 'RU_08_04']
+  },
+  {
+    id: 'US_09',
+    name: 'Ontario',
+    levels: ['US_09_01', 'US_09_02']
+  },
+  {
+    id: 'US_10',
+    name: 'British Columbia',
+    levels: ['US_10_01', 'US_10_02']
   }
 ];
