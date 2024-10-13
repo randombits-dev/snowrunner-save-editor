@@ -1,6 +1,6 @@
-import React, {createContext, useContext} from "react";
+import {createContext, useContext} from "react";
 
-import * as translations from 'definitions/en2.json';
+import * as translations from 'definitions/en.json';
 
 type I18nContextType = {
   translate: (key: string) => string;
