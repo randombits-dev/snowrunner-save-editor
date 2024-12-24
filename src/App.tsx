@@ -1,6 +1,6 @@
 import FileLoader from "components/FileLoader";
 import {SaveGame} from "definitions/ISaveGame";
-import React, {useState} from "react";
+import {useState} from "react";
 import SaveFile from "components/SaveFile";
 import styled from "styled-components";
 import AccordionItem from "components/accordion/AccordionItem";
@@ -15,7 +15,7 @@ import Instructions1 from "./instructions1.mdx";
 import {Store} from "./providers/store";
 
 const MainContainer = styled('div')`
-    max-width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
 `;
 
@@ -23,7 +23,7 @@ const FileContainer = styled.div`
   padding: 10px 0;
 `;
 
-const Instructions = ({hasData}: Params) => {
+const Instructions = ({hasData}) => {
   if (hasData) {
     return <Instructions2/>
   } else {
@@ -40,7 +40,6 @@ const HeaderText = styled.h1`
 const App = () => {
   const {translate} = useI18n();
   const [data, setData] = useState<SaveGame>(null);
-  const [fullData, setFullData] = useState<any>(null);
 
   const renderFileData = () => {
     if (data) {
@@ -63,7 +62,7 @@ const App = () => {
   };
   return (
     <MainContainer>
-    <div className="card">
+      <div className="card">
         <HeaderText>Snowrunner Save Editor</HeaderText>
         {/*<Image src="/images/snowrunner.jpg"/>*/}
         <div className="card-contents">
@@ -74,8 +73,8 @@ const App = () => {
             }
           </FileContainer>
         </div>
-    </div>
-        {renderFileData()}
+      </div>
+      {renderFileData()}
     </MainContainer>
   );
 }

@@ -1,9 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom";
 import App from "App";
 import I18nProvider from "providers/I18nProvider";
+import {hydrateRoot} from "react-dom/client";
 
-ReactDOM.hydrate(
-  <I18nProvider><App/></I18nProvider>,
-  document.getElementById("snowrunnerRoot")
+hydrateRoot(
+  document.getElementById("snowrunnerRoot"),
+  <I18nProvider><App/></I18nProvider>
 );

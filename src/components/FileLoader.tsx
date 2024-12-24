@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import {useRef} from 'react';
 import {SaveGame} from "definitions/ISaveGame";
 import ActionButton from "components/ActionButton";
 import {Store} from "../providers/store";
@@ -8,7 +8,7 @@ interface Params {
 }
 
 const FileLoader = ({onData}: Params) => {
-  const fileInputRef = useRef<HTMLInputElement>();
+  const fileInputRef = useRef<HTMLInputElement>(undefined);
   const onLoaded = (e) => {
     let text = e.target.result;
     const jsonEnd = text.lastIndexOf('}');
