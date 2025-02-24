@@ -16,13 +16,13 @@ importers:
         version: 3.1.0(acorn@8.14.0)(webpack@5.98.0)
       '@preact/compat':
         specifier: ^18.3.1
-        version: 18.3.1(preact@10.26.0)
+        version: 18.3.1(preact@10.26.2)
       preact:
-        specifier: ^10.26.0
-        version: 10.26.0
+        specifier: ^10.26.2
+        version: 10.26.2
       preact-render-to-string:
         specifier: ^6.5.13
-        version: 6.5.13(preact@10.26.0)
+        version: 6.5.13(preact@10.26.2)
       styled-components:
         specifier: ^6.1.0
         version: 6.1.15(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -2257,8 +2257,8 @@ packages:
     peerDependencies:
       preact: '>=10'
 
-  preact@10.26.0:
-    resolution: {integrity: sha512-6ugi/Mb7lyV5RA6KlnijFyDLMU253i7L0RRiObIzDoqj59KT9iTeNJbA/YGw6M7jP4vxaab0DOA8DgodTOA6EQ==}
+  preact@10.26.2:
+    resolution: {integrity: sha512-0gNmv4qpS9HaN3+40CLBAnKe0ZfyE4ZWo5xKlC1rVrr0ckkEvJvAQqKaHANdFKsGstoxrY4AItZ7kZSGVoVjgg==}
 
   pretty-error@4.0.0:
     resolution: {integrity: sha512-AoJ5YMAcXKYxKhuJGdcvse+Voc6v1RgnsR3nWcYU7q4t6z0Q6T86sv5Zq8VIRbOWWFpvdGE83LtdSMNd+6Y0xw==}
@@ -3806,9 +3806,9 @@ snapshots:
       '@parcel/watcher-win32-x64': 2.5.1
     optional: true
 
-  '@preact/compat@18.3.1(preact@10.26.0)':
+  '@preact/compat@18.3.1(preact@10.26.2)':
     dependencies:
-      preact: 10.26.0
+      preact: 10.26.2
 
   '@tsconfig/node10@1.0.11': {}
 
@@ -5465,11 +5465,11 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  preact-render-to-string@6.5.13(preact@10.26.0):
+  preact-render-to-string@6.5.13(preact@10.26.2):
     dependencies:
-      preact: 10.26.0
+      preact: 10.26.2
 
-  preact@10.26.0: {}
+  preact@10.26.2: {}
 
   pretty-error@4.0.0:
     dependencies:
