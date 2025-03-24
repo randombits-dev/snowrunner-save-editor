@@ -12,7 +12,7 @@
     "@preact/compat": "^18.3.1",
     "preact": "^10.26.4",
     "preact-render-to-string": "^6.5.13",
-    "styled-components": "^6.1.15"
+    "styled-components": "^6.1.16"
   },
   "devDependencies": {
     "@babel/core": "^7.26.10",
@@ -29,7 +29,7 @@
     "css-loader": "^7.1.2",
     "dotenv": "^16.4.7",
     "html-webpack-plugin": "^5.6.3",
-    "sass": "^1.85.1",
+    "sass": "^1.86.0",
     "sass-loader": "^16.0.5",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.2",
