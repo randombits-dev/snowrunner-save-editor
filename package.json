@@ -10,9 +10,9 @@
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
     "@preact/compat": "^18.3.1",
-    "preact": "^10.26.8",
+    "preact": "^10.26.9",
     "preact-render-to-string": "^6.5.13",
-    "styled-components": "^6.1.17"
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
     "@babel/core": "^7.27.1",
@@ -29,7 +29,7 @@
     "css-loader": "^7.1.2",
     "dotenv": "^16.5.0",
     "html-webpack-plugin": "^5.6.3",
-    "sass": "^1.87.0",
+    "sass": "^1.89.2",
     "sass-loader": "^16.0.5",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.2",
@@ -38,7 +38,7 @@
     "url-loader": "^4.1.1",
     "webpack": "^5.99.7",
     "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.1"
+    "webpack-dev-server": "^5.2.2"
   },
   "license": "MIT",
   "resolutions": {
