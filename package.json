@@ -10,16 +10,16 @@
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
     "@preact/compat": "^18.3.1",
-    "preact": "^10.28.0",
-    "preact-render-to-string": "^6.6.3",
-    "styled-components": "^6.1.19"
+    "preact": "^10.28.2",
+    "preact-render-to-string": "^6.6.5",
+    "styled-components": "^6.3.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.28.5",
-    "@babel/plugin-syntax-jsx": "^7.27.1",
-    "@babel/plugin-transform-react-jsx": "^7.27.1",
+    "@babel/core": "^7.28.6",
+    "@babel/plugin-syntax-jsx": "^7.28.6",
+    "@babel/plugin-transform-react-jsx": "^7.28.6",
     "@babel/plugin-transform-runtime": "^7.28.5",
-    "@babel/preset-env": "^7.28.5",
+    "@babel/preset-env": "^7.28.6",
     "@babel/preset-react": "^7.28.5",
     "@babel/preset-typescript": "^7.28.5",
     "@types/react": "^18.3.18",
@@ -28,17 +28,17 @@
     "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
     "dotenv": "^17.2.3",
-    "html-webpack-plugin": "^5.6.5",
-    "sass": "^1.94.2",
+    "html-webpack-plugin": "^5.6.6",
+    "sass": "^1.97.2",
     "sass-loader": "^16.0.6",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
     "url-loader": "^4.1.1",
-    "webpack": "^5.103.0",
+    "webpack": "^5.104.1",
     "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.2"
+    "webpack-dev-server": "^5.2.3"
   },
   "license": "MIT",
   "resolutions": {
